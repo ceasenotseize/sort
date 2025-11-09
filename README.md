@@ -335,7 +335,7 @@ a:hover{color:#99ccff;}
 </tr>
 </table><br><br>
 <div id="resultField" style="text-align:center;">
-    <p><font size="2" face="돋움"><span style="">유후</font></p>
+    <p><font size="2" face="돋움"><span style="">최애소트 왼른소트 뭐든 OK</font></p>
     <p><font size="2" face="돋움">@ceasenotsieze</font></p>
 
 </div>
