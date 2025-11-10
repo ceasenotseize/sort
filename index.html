@@ -4,40 +4,63 @@
     <meta charset="UTF-8">
     <title>알파 페이지 (메인)</title>
     <style>
-        /* (선택 사항) 링크를 버튼처럼 꾸미는 CSS */
+       <style>
+    .nav-button {
+        text-decoration: none;
+        color: white;
+        background-color: #007bff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 5px;
+        display: inline-block;
+        
+        /* (추가) 폰트를 조금 굵게 */
+        font-weight: bold;
+        font-family: sans-serif; /* 깔끔한 폰트로 */
+
+        /* (추가) 버튼에 그림자 효과를 줍니다. */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        
+        /* (추가) 모든 변경사항(색상, 그림자 등)이 0.3초 동안 부드럽게 변함 */
+        transition: all 0.3s ease;
+    }
+
+    .nav-button:hover {
+        background-color: #0056b3;
+        cursor: pointer;
+        
+        /* (추가) 마우스를 올리면 그림자를 더 진하게 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+</style>
         .nav-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 5px;
-            background-color: #007bff;
+            text-decoration: none;
             color: white;
-            text-decoration: none; /* 링크 밑줄 제거 */
+            background-color: #007bff;
+            padding: 10px 20px;
             border-radius: 5px;
-            font-family: sans-serif;
+            margin: 5px;
+            display: inline-block;
             font-weight: bold;
+            font-family: sans-serif;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
+
         .nav-button:hover {
             background-color: #0056b3;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
 
-    <h1>알파 페이지에 오신 것을 환영합니다!</h1>
+    <h1>@yangirl11 한정 소트 페이지</h1>
     <p>아래에서 이동할 페이지를 선택하세요.</p>
 
-    <a href="a.html" class="nav-button">A 페이지로 가기</a>
-    <a href="b.html" class="nav-button">B 페이지로 가기</a>
-    <a href="c.html" class="nav-button">C 페이지로 가기</a>
-    <a href="d.html" class="nav-button">D 페이지로 가기</a>
-
-    <hr>
-    
-    <h3>(참고) 버튼 디자인이 필요 없다면 그냥 링크만 걸어도 됩니다:</h3>
-    <a href="a.html">A 페이지</a><br>
-    <a href="b.html">B 페이지</a><br>
-    <a href="c.html">C 페이지</a><br>
-    <a href="d.html">D 페이지</a>
+    <a href="yangir11.html" class="nav-button">전체 캐릭터 소트</a>
+    <a href="kasugano.html" class="nav-button">카스가노 소트</a>
 
 </body>
 </html>
