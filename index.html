@@ -57,17 +57,20 @@
             transform: translateY(-2px);
         }
 
-        /* --- (5. ⭐️ 추가된 부분) --- */
+        /* (5. ⭐️ 이 부분도 수정하세요) */
         /* 가로 버튼들을 감쌀 컨테이너 */
         .external-links {
-            display: flex;
-            flex-direction: row; /* (중요) 가로로 정렬 */
-            justify-content: center; /* 버튼들을 가운데로 모음 */
-            flex-wrap: wrap; /* 화면이 작으면 줄바꿈 */
-            margin-top: 40px; /* 메인 버튼과 간격 띄우기 */
-            border-top: 1px solid #eee; /* (선택) 구분선 추가 */
-            padding-top: 20px; /* 구분선과 간격 띄우기 */
-            width: 100%; /* 너비 꽉 채워서 중앙 정렬 */
+        display: flex;
+        flex-direction: row; 
+        justify-content: center; 
+    
+        /* (수정) 이 줄을 nowrap으로 바꾸거나 삭제하세요 */
+        flex-wrap: nowrap; /* wrap -> nowrap */
+    
+        margin-top: 40px;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+        width: 100%;
         }
 
         /* (6. ⭐️ 이 부분을 교체하세요) */
@@ -78,7 +81,7 @@
         background-color: #f0f0f0;
     
         /* (수정) 버튼 사이즈 더 줄이기 (기존 5px 12px) */
-        padding: 4px 10px; 
+        padding: 4px 8px; 
     
         /* (수정) 버튼 간격 살짝 줄이기 (기존 5px) */
         margin: 4px; 
