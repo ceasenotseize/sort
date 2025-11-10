@@ -6,39 +6,21 @@
     <title>메인 페이지</title>
     
     <style>
-        /* * (1단계 - 추가)
-         * 스타일 태그 맨 위에 @font-face를 추가합니다.
-         */
+        /* (기존 폰트 선언) */
         @font-face {
-            font-family: 'KoPubDotum'; /* kpdm. */
-            
-            /* * (★★★★★ 중요 ★★★★★)
-             * 여기에 GitHub에 업로드한 폰트 파일 경로와 이름을
-             * '정확하게' 적어주셔야 합니다.
-             * (예: 'KoPubWorld 돋움체 Medium.ttf')
-             * (만약 'fonts' 폴더에 넣었다면 'fonts/KoPubWorld 돋움체 Medium.ttf')
-             */
-            src: url('KoPubWorld Dotum Medium.ttf'); 
+            font-family: 'KoPubDotum';
+            src: url('업로드한_폰트파일_이름.ttf'); 
         }
-        /* --- (여기까지 1단계 추가) --- */
 
-
-        /* 1. 페이지 전체 설정 */
+        /* 1. 페이지 전체 설정 (기존과 동일) */
         body {
-            /* 페이지 배경을 하얗게 */
+            font-family: 'KoPubDotum', sans-serif; 
             background-color: white;
-            
-            /* * (2단계 - 변경)
-             * 기존 font-family 줄을 아래 코드로 변경(교체)합니다.
-             */
-            font-family: 'KoPubDotum', sans-serif;
-            
-            /* 폰트 및 기본 여백 초기화 */
             margin: 0;
             padding: 0;
         }
 
-        /* 2. 전체 내용을 감싸고 중앙 정렬할 컨테이너 (기존과 동일) */
+        /* 2. 전체 내용을 감싸고 중앙 정렬 (기존과 동일) */
         .main-container {
             max-width: 800px;
             margin: 0 auto; 
@@ -54,7 +36,7 @@
             color: #333;
         }
 
-        /* 4. 버튼 스타일 (기존과 동일) */
+        /* 4. 메인 버튼 스타일 (기존과 동일) */
         .nav-button {
             width: 300px; 
             background-color: #add8e6;
@@ -69,12 +51,41 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
-
-        /* 5. 버튼에 마우스를 올렸을 때 효과 (기존과 동일) */
         .nav-button:hover {
             background-color: #87ceeb;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
             transform: translateY(-2px);
+        }
+
+        /* --- (5. ⭐️ 추가된 부분) --- */
+        /* 가로 버튼들을 감쌀 컨테이너 */
+        .external-links {
+            display: flex;
+            flex-direction: row; /* (중요) 가로로 정렬 */
+            justify-content: center; /* 버튼들을 가운데로 모음 */
+            flex-wrap: wrap; /* 화면이 작으면 줄바꿈 */
+            margin-top: 40px; /* 메인 버튼과 간격 띄우기 */
+            border-top: 1px solid #eee; /* (선택) 구분선 추가 */
+            padding-top: 20px; /* 구분선과 간격 띄우기 */
+            width: 100%; /* 너비 꽉 채워서 중앙 정렬 */
+        }
+
+        /* (6. ⭐️ 추가된 부분) */
+        /* 작고 새로운 버튼 스타일 */
+        .small-button {
+            text-decoration: none;
+            color: #555; /* 글자색 살짝 연하게 */
+            background-color: #f0f0f0; /* 배경색 연한 회색 */
+            padding: 5px 12px; /* (중요) nav-button보다 작게 */
+            margin: 5px; /* 버튼끼리 간격 */
+            border-radius: 5px;
+            font-size: 0.9em; /* (중요) 폰트 작게 */
+            font-weight: normal; /* 굵지 않게 */
+            transition: all 0.2s ease;
+        }
+        .small-button:hover {
+            background-color: #e0e0e0;
+            color: #000;
         }
     </style>
 </head>
@@ -86,6 +97,13 @@
 
         <a href="yangirl11.html" class="nav-button">전체 캐릭터 소트</a>
         <a href="kasugano.html" class="nav-button">카스가노 소트</a>
+        
+        <div class="external-links">
+            <a href="https://rofan.ai/user/8a8ab284-7d56-467a-b459-dcd2f5375665" class="nav-button" target="_blank">로판</a>
+            <a href="https://caveduck.io/creates?tab=userInfo&locale=ko" class="nav-button" target="_blank">케이브덕</a>
+            <a href="https://x.com/yangirl11" class="nav-button" target="_blank">𝕏</a>
+            <a href="https://pushoong.com/ask/7662801728/" class="nav-button" target="_blank">푸슝</a>
+        </div>
         
     </div>
 
