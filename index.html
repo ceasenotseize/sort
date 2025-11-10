@@ -2,65 +2,98 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>알파 페이지 (메인)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인 페이지</title>
+    
     <style>
-       <style>
-    .nav-button {
-        text-decoration: none;
-        color: white;
-        background-color: #007bff;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin: 5px;
-        display: inline-block;
-        
-        /* (추가) 폰트를 조금 굵게 */
-        font-weight: bold;
-        font-family: sans-serif; /* 깔끔한 폰트로 */
+        /* 1. 페이지 전체 설정 */
+        body {
+            /* 페이지 배경을 하얗게 */
+            background-color: white;
+            
+            /* 폰트 및 기본 여백 초기화 */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-        /* (추가) 버튼에 그림자 효과를 줍니다. */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        
-        /* (추가) 모든 변경사항(색상, 그림자 등)이 0.3초 동안 부드럽게 변함 */
-        transition: all 0.3s ease;
-    }
+        /* 2. 전체 내용을 감싸고 중앙 정렬할 컨테이너 */
+        .main-container {
+            /* PC 화면 기준으로 보기 좋게 최대 너비 설정 */
+            max-width: 800px;
+            
+            /* 컨테이너 자체를 화면 중앙으로 */
+            margin: 0 auto; 
+            
+            /* 위쪽에서 살짝 띄우기 */
+            padding-top: 50px;
+            
+            /* (중요) 내부 요소들(제목, 버튼)을 중앙 정렬 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .nav-button:hover {
-        background-color: #0056b3;
-        cursor: pointer;
-        
-        /* (추가) 마우스를 올리면 그림자를 더 진하게 */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-</style>
+        /* 3. 제목 스타일 */
+        h1 {
+            /* 제목은 이미 .main-container에 의해 중앙 정렬됨 */
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        /* 4. 버튼 스타일 */
         .nav-button {
-            text-decoration: none;
-            color: white;
-            background-color: #007bff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin: 5px;
-            display: inline-block;
+            /* (중요) 버튼 세로 나열 (flex-direction: column의 자식 요소) */
+            /* 각 버튼의 너비를 300px로 고정 */
+            width: 300px; 
+            
+            /* (요청) 버튼 배경을 연한 하늘색으로 */
+            background-color: #add8e6; /* lightblue */
+            
+            /* 버튼끼리 세로 여백 (위아래 10px) */
+            margin: 10px 0;
+            
+            /* 버튼 안쪽 여백 (글자와 테두리 사이) */
+            padding: 15px;
+            
+            /* 글자 스타일 */
+            color: #333; /* 글자색 (너무 밝은 색 피하기) */
+            text-decoration: none; /* 링크 밑줄 제거 */
+            font-size: 1.1em;
             font-weight: bold;
-            font-family: sans-serif;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center; /* 버튼 내 텍스트 중앙 정렬 */
+            
+            /* 꾸미기 */
+            border-radius: 8px; /* 모서리 둥글게 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 연한 그림자 */
+            
+            /* 부드러운 효과 */
             transition: all 0.3s ease;
         }
 
+        /* 5. 버튼에 마우스를 올렸을 때 효과 */
         .nav-button:hover {
-            background-color: #0056b3;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 살짝 더 진한 하늘색 */
+            background-color: #87ceeb; /* skyblue */
+            
+            /* 그림자 강조 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            
+            /* 살짝 위로 뜨는 효과 */
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
-    <h1>@yangirl11 한정 소트 페이지</h1>
-    <p>아래에서 이동할 페이지를 선택하세요.</p>
+    <div class="main-container">
 
-    <a href="yangirl11.html" class="nav-button">전체 캐릭터 소트</a>
-    <a href="kasugano.html" class="nav-button">카스가노 소트</a>
+        <h1>@yangirl11 헌정 소트 페이지</h1>
+
+        <a href="yangir11.html" class="nav-button">전체 캐릭터 소트</a>
+        <a href="kasugano.html" class="nav-button">카스가노 소트</a>
+        
+    </div>
 
 </body>
 </html>
