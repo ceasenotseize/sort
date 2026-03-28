@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="ja">
+
+<head>
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+
+<title>카스가노 소트</title>
+
+<script type="text/javascript">
+
+<!--
+
+//*********************************************************
+
+//
+
+// ?価するメンバ?の名前のリスト
+
+//
+
+// この部分を変更して下さい。名前の削除・追加も可?です。
+
+// 名前を引用符(")で括り、コン?(,)で区切って下さい。
+
+// 但し、リストの最後にはコン?を入れてはいけません。
+
+//
+
+//*********************************************************
+
+var namMember = new Array(
+
+  
+
+"<img src=> <br>차건우</br>",
+
+"<img src=> <br>최성진</br>",
+
+"<img src=> <br>서민후</br>",
+
+"<img src=> <br>이정한</br>",
+
+"<img src=> <br>윤지완</br>",
+
+"<img src=> <br>이태건</br>",
+
+"<img src=> <br>백유찬</br>",
+
+"<img src=> <br>최세현</br>",
+
+"<img src=> <br>권도하</br>",
+
+"<img src=> <br>신예준</br>",
+
+"<img src=> <br>박희수</br>"
+
+
+
+);
+
+//*********************************************************
+
+
+
+var lstMember = new Array();
+
+var parent = new Array();
+
+var equal = new Array();
+
+var rec = new Array();
+
+var cmp1,cmp2;
+
+var head1,head2;
+
+var nrec;
+
+
+
+var numQuestion;
+
+var totalSize;
+
+var finishSize;
+
+var finishFlag;
+
+
+
+//変数の初期化+++++++++++++++++++++++++++++++++++++++++++++
+
+function initList(){
+
+var n = 0;
+
+var mid;
+
+var i;
+
+
+
+//??トすべき配列
+
+lstMember[n] = new Array();
+
+for (i=0; i<namMember.length; i++) {
+
+lstMember[n][i] = i;
+
+}
+
+parent[n] = -1;
+
+totalSize = 0;
+
+n++;
+
+
+
+for (i=0; i<lstMember.length; i++) {
+
+//要素数が２以上なら２分割し、
+
+//分割された配列をlstMemberの最後に加える
+
+if(lstMember[i].length>=2) {
+
+mid = Math.ceil(lstMember[i].length/2);
+
+lstMember[n] = new Array();
+
+lstMember[n] = lstMember[i].slice(0,mid);
+
+totalSize += lstMember[n].length;
+
+parent[n] = i;
+
+n++;
+
+lstMember[n] = new Array();
+
+lstMember[n] = lstMember[i].slice(mid,lstMember[i].length);
+
+totalSize += lstMember[n].length;
+
+parent[n] = i;
+
+n++;
+
+}
+
+}
+
+
+
+//保存用配列
+
+for (i=0; i<namMember.length; i++) {
+
+rec[i] = 0;
+
+}
+
+nrec = 0;
+
+
+
+//引き分けの結果を保存するリスト
+
+//キ?：リンク始?の値
+
+// 値 ：リンク終?の値
+
+for (i=0; i<=namMember.length; i++) {
+
+equal[i] = -1;
+
+}
+
+
+
+cmp1 = lstMember.length-2;
+
+cmp2 = lstMember.length-1;
+
+head1 = 0;
+
+head2 = 0;
+
+numQuestion = 1;
+
+finishSize = 0;
+
+finishFlag = 0;
+
+}
+
+
+
+//リストの??ト+++++++++++++++++++++++++++++++++++++++++++
+
+//flag：比較結果
+
+//  -1：左を選択
+
+//   0：引き分け
+
+//   1：右を選択
+
+function sortList(flag){
+
+var i;
+
+var str;
+
+
+
+//recに保存
+
+if (flag<0) {
+
+rec[nrec] = lstMember[cmp1][head1];
+
+head1++;
+
+nrec++;
+
+finishSize++;
+
+while (equal[rec[nrec-1]]!=-1) {
+
+rec[nrec] = lstMember[cmp1][head1];
+
+head1++;
+
+nrec++;
+
+finishSize++;
+
+}
+
+}
+
+else if (flag>0) {
+
+rec[nrec] = lstMember[cmp2][head2];
+
+head2++;
+
+nrec++;
+
+finishSize++;
+
+while (equal[rec[nrec-1]]!=-1) {
+
+rec[nrec] = lstMember[cmp2][head2];
+
+head2++;
+
+nrec++;
+
+finishSize++;
+
+}
+
+}
+
+else {
+
+rec[nrec] = lstMember[cmp1][head1];
+
+head1++;
+
+nrec++;
+
+finishSize++;
+
+while (equal[rec[nrec-1]]!=-1) {
+
+rec[nrec] = lstMember[cmp1][head1];
+
+head1++;
+
+nrec++;
+
+finishSize++;
+
+}
+
+equal[rec[nrec-1]] = lstMember[cmp2][head2];
+
+rec[nrec] = lstMember[cmp2][head2];
+
+head2++;
+
+nrec++;
+
+finishSize++;
+
+while (equal[rec[nrec-1]]!=-1) {
+
+rec[nrec] = lstMember[cmp2][head2];
+
+head2++;
+
+nrec++;
+
+finishSize++;
+
+}
